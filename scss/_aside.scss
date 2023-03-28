@@ -1,0 +1,38 @@
+aside {
+  padding: 32px 27px 0px 35px;
+
+  > img {
+    margin-bottom: 59px;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 3.7rem;
+      }
+      a {
+        display: flex;
+        align-content: center;
+        gap: 1.6rem;
+
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 125%;
+        color: #cab3ff;
+
+        &.active,
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  aside {
+    display: none;
+  }
+}
