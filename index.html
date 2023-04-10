@@ -81,7 +81,7 @@
           <div class="kanban-grid">
             <div class="column">
               <h3>
-                A fazer <button><i class="ph ph-plus"></i></button>
+                A fazer <button id="addTask"><i class="ph ph-plus"></i></button>
               </h3>
               <div class="dropzone">
                 <div class="item" draggable="true">
@@ -192,6 +192,7 @@
       <div class="modal">
         <div class="overlay">
           <div class="modal-content">
+            <button class="close-modal"><i class="ph ph-x"></i></button>
             <div class="input-wrapper">
               <label for="task">Qual sua tarefa?</label>
               <input
@@ -219,6 +220,8 @@
 
     <script src="./js/main.js
     "></script>
+
+    <script src="./js/modal.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
   </body>
 </html>
