@@ -83,7 +83,7 @@
               <h3>
                 A fazer <button id="addTask"><i class="ph ph-plus"></i></button>
               </h3>
-              <div class="dropzone">
+              <div class="dropzone" id="js-first-dropzone">
                 <div class="item" draggable="true">
                   <h2 class="title">#boraCodar um Kanban 🧑‍💻 ‍</h2>
                   <p>
@@ -191,7 +191,7 @@
 
       <div class="modal">
         <div class="overlay">
-          <div class="modal-content">
+          <form class="modal-content">
             <button class="close-modal"><i class="ph ph-x"></i></button>
             <div class="input-wrapper">
               <label for="task">Qual sua tarefa?</label>
@@ -201,6 +201,7 @@
                 placeholder="ex: Codar a noite toda"
               />
             </div>
+
             <textarea
               name="description"
               id="description"
@@ -214,16 +215,18 @@
               <input type="text" id="tag" placeholder="ex:trabalhar" />
             </div>
 
-            <button class="add-task">Adicionar Task</button>
-          </div>
+            <button type="submit" class="add-task" id="button-submit">
+              Adicionar Task
+            </button>
+          </form>
         </div>
       </div>
     </div>
 
     <script src="./js/main.js
     "></script>
-
     <script src="./js/modal.js"></script>
+    <script src="./js/addTask.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
   </body>
 </html>

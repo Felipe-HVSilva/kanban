@@ -18,26 +18,11 @@ function dragend() {
 }
 
 dropzones.forEach((dropzone) => {
-  dropzone.addEventListener("dragenter", dragenter)
   dropzone.addEventListener("dragover", dragover)
-  dropzone.addEventListener("dragleave", dragleave)
-  dropzone.addEventListener("drop", drop)
 })
-
-function dragenter() {
-  console.log(" Enter in zone ")
-}
 
 function dragover() {
   const cardBeingDragged = document.querySelector(".is-dragging")
 
   this.appendChild(cardBeingDragged)
-}
-
-function dragleave() {
-  console.log(" leave in Zone")
-}
-
-function drop() {
-  console.log(" Drop")
 }
