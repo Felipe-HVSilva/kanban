@@ -15,4 +15,8 @@ $buttonAddTask.addEventListener("click", openModal)
 
 $buttonCloseModal.addEventListener("click", closeModal)
 
-$modalOverlay.addEventListener("click", closeModal)
+$modalOverlay.addEventListener("click", (e) => {
+  if (e.target.classList.contains("overlay")) {
+    closeModal()
+  }
+})
