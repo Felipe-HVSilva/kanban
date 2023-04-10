@@ -32,7 +32,7 @@ Kanban desenvolvido no #boraCodar da Rocketseat, totalmente responsivo e com o e
 ## 🚧 Features
 
 - Filtrar os cards
-- Criar novas tarefas
+- Criar novas tarefas ✔
 
 ## 🔖 Layout
 
