@@ -65,7 +65,7 @@ $form.addEventListener("submit", (e) => {
   const description = $descriptionTask.value
   const tagTask = $inputTag.value
 
-  if (!nameTask || !description || !tagTask) {
+  if (nameTask === "" || description === "" || tagTask === "") {
     alert("Ops, algum campo não foi preenchido!")
     return
   }
