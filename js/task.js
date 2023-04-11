@@ -3,6 +3,7 @@ const $inputTask = document.querySelector("#task")
 const $descriptionTask = document.querySelector("#description")
 const $inputTag = document.querySelector("#tag")
 const $form = document.querySelector("form")
+const $buttonDeleteTask = document.querySelector(".js-delete-task")
 
 function createTask(nameTask, description, tag) {
   const taskContent = document.createElement("div")
@@ -18,6 +19,7 @@ function createTask(nameTask, description, tag) {
   const i = document.createElement("i")
   i.classList.add("ph", "ph-x")
   buttonDeleteTask.appendChild(i)
+  buttonDeleteTask.addEventListener("click", deleteTask)
   titleTask.appendChild(buttonDeleteTask)
 
   const descriptionTask = document.createElement("p")
@@ -40,6 +42,11 @@ function createTask(nameTask, description, tag) {
   $firstDropzone.appendChild(taskContent)
 }
 
+function deleteTask(e) {
+  const task = e.target.parentNode.parentNode.parentNode
+  task.remove()
+}
+
 $form.addEventListener("submit", (e) => {
   e.preventDefault()
 
@@ -60,3 +67,7 @@ $form.addEventListener("submit", (e) => {
   $descriptionTask.value = ""
   $inputTag.value = ""
 })
+
+if ($buttonDeleteTask) {
+  $buttonDeleteTask.addEventListener("click", deleteTask)
+}
