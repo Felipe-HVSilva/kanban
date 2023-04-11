@@ -43,15 +43,21 @@ function createTask(nameTask, description, tag) {
 }
 
 function saveTaskOnLocalStorage(nameTask, description, tagTask) {
-  localStorage.setItem(
-    "tasks",
-    JSON.stringify([{ nameTask, description, tagTask }])
-  )
+  let tasksList = []
+
+  if (localStorage.hasOwnProperty("tasks")) {
+    tasksList = JSON.parse(localStorage.getItem("tasks"))
+  }
+
+  tasksList.push({ nameTask, description, tagTask })
+
+  localStorage.setItem("tasks", JSON.stringify(tasksList))
 }
 
 function deleteTask(e) {
   const task = e.target.parentNode.parentNode.parentNode
   task.remove()
+  localStorage.removeItem(tasks)
 }
 
 $form.addEventListener("submit", (e) => {
