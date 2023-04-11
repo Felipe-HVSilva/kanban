@@ -42,6 +42,13 @@ function createTask(nameTask, description, tag) {
   $firstDropzone.appendChild(taskContent)
 }
 
+function saveTaskOnLocalStorage(nameTask, description, tagTask) {
+  localStorage.setItem(
+    "tasks",
+    JSON.stringify([{ nameTask, description, tagTask }])
+  )
+}
+
 function deleteTask(e) {
   const task = e.target.parentNode.parentNode.parentNode
   task.remove()
@@ -60,7 +67,7 @@ $form.addEventListener("submit", (e) => {
   }
 
   createTask(nameTask, description, tagTask)
-
+  saveTaskOnLocalStorage(nameTask, description, tagTask)
   closeModal()
 
   $inputTask.value = ""
@@ -70,4 +77,14 @@ $form.addEventListener("submit", (e) => {
 
 if ($buttonDeleteTask) {
   $buttonDeleteTask.addEventListener("click", deleteTask)
+}
+
+window.onload = () => {
+  const tasks = JSON.parse(localStorage.getItem("tasks"))
+
+  if (tasks) {
+    tasks.forEach((task) => {
+      createTask(task.nameTask, task.description, task.tagTask)
+    })
+  }
 }
