@@ -161,6 +161,30 @@ main {
               line-height: 130%;
               color: #403937;
               margin-bottom: 10px;
+
+              display: flex;
+              justify-content: space-between;
+              gap: 5px;
+              button {
+                background-color: #dc2626;
+                border-radius: 50%;
+                border: none;
+                padding: 3px;
+                transition: background-color 0.3s;
+                cursor: pointer;
+
+                display: flex;
+                align-items: center;
+
+                .ph-x {
+                  color: #fff;
+                  font-size: 10px;
+                }
+
+                &:hover {
+                  background-color: #f87171;
+                }
+              }
             }
 
             p {

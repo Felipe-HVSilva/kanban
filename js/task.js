@@ -14,6 +14,12 @@ function createTask(nameTask, description, tag) {
   titleTask.innerText = `${nameTask}`
   taskContent.appendChild(titleTask)
 
+  const buttonDeleteTask = document.createElement("button")
+  const i = document.createElement("i")
+  i.classList.add("ph", "ph-x")
+  buttonDeleteTask.appendChild(i)
+  titleTask.appendChild(buttonDeleteTask)
+
   const descriptionTask = document.createElement("p")
   descriptionTask.innerText = `${description}`
   taskContent.appendChild(descriptionTask)
