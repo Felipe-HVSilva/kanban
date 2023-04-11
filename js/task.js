@@ -54,10 +54,10 @@ function saveTaskOnLocalStorage(nameTask, description, tagTask) {
   localStorage.setItem("tasks", JSON.stringify(tasksList))
 }
 
-function deleteTask(e) {
-  const task = e.target.parentNode.parentNode.parentNode
+function deleteTask() {
+  const task = this.parentElement.parentElement
+
   task.remove()
-  localStorage.removeItem(tasks)
 }
 
 $form.addEventListener("submit", (e) => {
